@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry, My Dear.</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #09090d, #21131d, #100e16);
+    color: #eee1e7;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+.card {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 25px;
+    text-align: center;
+    background: #ffffff06;
+    border: 1px solid #d99aab30;
+    border-radius: 18px;
+    box-shadow: 0 0 50px #d16b8810;
+    animation: fadeIn 1.8s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 48px;
+    color: #c77a91;
+    animation: beat 2s infinite;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    color: #e7b4c3;
+    margin: 20px 0 12px;
+}
+
+.subtitle {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #a88a98;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    color: #d9cbd2;
+}
+
+button {
+    margin-top: 10px;
+    padding: 13px 23px;
+    border: 1px solid #c77a91;
+    border-radius: 30px;
+    background: transparent;
+    color: #e7b4c3;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c77a91;
+    color: #100e16;
+}
+
+#letter {
+    display: none;
+    text-align: left;
+    margin-top: 25px;
+    padding: 20px 16px;
+    background: #ffffff08;
+    border-left: 2px solid #c77a91;
+    animation: fadeIn 1s ease;
+}
+
+.signature {
+    margin-top: 28px;
+    color: #bc91a2;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    color: #c77a91;
+    pointer-events: none;
+    animation: floatUp 7s linear forwards;
+}
+
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0); }
+    15% { opacity: 0.6; }
+    100% {
+        opacity: 0;
+        transform: translateY(-110vh) rotate(35deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="heart">♡</div>
+
+    <h1>my apologies.</h1>
+    <div class="subtitle">TO THE ONE I MADE MISTAKES
+    
+    </div>
+
+    <p>
+        pasensya na kung may mistakes akong ginawa kahit minsan gumagawa lang ako ng biro pero just youre not comfortable about my jokes kung uulitin ko payun means dimonako papansinsin.
+
+    <p>
+        kung may galit kapa, ill take my mistakes kahit ilagay kopo sa cup ng ilang beses ko na pong ginawa sa mga mali kong desisyon or mga anumang humor ko ng dimo nagugustuhan.
+    </p>
+
+    <p>
+        if youre asking kung kakausapin kita, opo kakausapin pa kita kahit dimonako pinapansin mag iiwan parin ako ng reply sayo for updates sa mga ginawa ko para malaman mo anong nangyari or anong ganap.
+    </p>
+
+    <button onclick="openLetter()">
+        Read more para may improvement & Forgivness ♡
+    </button>
+
+    <div id="letter">
+        <p>
+            Honestly, siguro masasaktan ako, kasi nasanay akong kausap ka at naging parte ka na ng araw-araw ko. pero kung dumating sa point na ayaw mo na talaga akong kausapin kung may mali akong ginawa kaya gumawa ako ng paraang apologies gamit ung coding style.
+
+        <p>
+            pero mas malala pa sa paglalaro
+          natin kahit naiinip ka pag naglalaro tayong dalawa pero ill imrpove that as well tapos didikitan nalang kita para maglalaro tayo ng br.
+        </p>
+
+        <p>
+            I'm sorry for making you repeat your boundaries.
+            And I'm sorry that I didnt stop myself
+            of my actions until things changed between us.
+        </p>
+
+        <p>
+            I wish I could undo those moments,
+            but I can't. All I can do is learn from them
+            and prove through my actions that I can be better kahit magbago na
+            din actions ko.
+        </p>
+
+        <p>
+            if you willing to gave me another chance sguro magbabago nako.
+        </p>
+
+        <p>
+            If this is where our story ends,
+            I'll still be thankful that you were once
+            part of my life kahit ilang araw lang naman.
+        </p>
+
+        <p>
+            papalambing sana right now but focus on your exam napo.
+        </p>
+    </div>
+
+    <div class="signature">
+        Goodluck and hopefully you read this. ♡
+    </div>
+
+</div>
+
+<script>
+function openLetter() {
+    const letter = document.getElementById("letter");
+
+    if (letter.style.display === "block") {
+        letter.style.display = "none";
+        return;
+    }
+
+    letter.style.display = "block";
+
+    for (let i = 0; i < 15; i++) {
+        const heart = document.createElement("span");
+        heart.className = "floating";
+        heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (14 + Math.random() * 16) + "px";
+        heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 9000);
+    }
+}
+</script>
+
+</body>
+</html>
